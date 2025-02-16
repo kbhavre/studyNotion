@@ -180,4 +180,4 @@ export function logout(navigate) {
     toast.success("Logged Out")
     navigate("/")
   }
-}
+}      

@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
         {/* Image */}
       <Link to="/">
-        <img src={logo} width={160} height={42} loading='lazy'/>
+        <img src={logo} alt='imgLogo' width={160} height={42} loading='lazy'/>
       </Link>
 
       {/* Nav Links */}
@@ -70,7 +70,7 @@ const Navbar = () => {
                  <li key={index}>
                     {
                         link.title === "Catalog" ? (
-                            <div className='relative flex items-center gap-2 group'>
+                            <div className='relative z-10 flex items-center gap-2 group'>
                                 <p>{link.title}</p>
                                 <IoIosArrowDropdownCircle/>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
         <div className='flex gap-x-4 items-center'>
 
             {
-                user && user?.accountType != "Instructor" && (
+                user && user?.accountType !== "Instructor" && (
                     <Link to="/dashboard/cart" className='relative'>
                         <AiOutlineShoppingCart />
                         {
